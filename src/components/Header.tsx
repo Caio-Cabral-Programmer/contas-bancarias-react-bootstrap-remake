@@ -23,7 +23,7 @@ const Header = () => {
             style={{ cursor: "pointer" }}
           >
             <img src={reactLogo} className="logo react" alt="React logo" />
-            <div className="ms-3 text-white">
+            <div className="ms-3 text-dark" >
               <h1
                 className="mb-0 fw-bold"
                 style={{ fontSize: "2rem", fontFamily: "Times New Roman" }}
