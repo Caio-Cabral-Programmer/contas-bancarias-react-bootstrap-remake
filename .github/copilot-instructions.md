@@ -75,3 +75,5 @@
 - Para adicionar novas páginas, crie o componente em `src/pages/` e registre a rota em `src/AppRoutes.tsx`.
 - Para customizar estilos, prefira variáveis JS/TS ou sobrescreva CSS global.
 - Não use `@import` SCSS do Bootstrap para evitar warnings depreciação; use o CSS pronto.
+- Atualize esta instrução de acordo com os commits que forem acontecendo.
+- As mensagens de commit devem ser claras e descritivas, seguindo o padrão "tipo: descrição". Devem ser em inglês. Devem tratar de mudanças específicas no código, como "feat: adicionar nova página de login" ou "fix: corrigir bug no componente de formulário".
