@@ -4,15 +4,19 @@ import "../App.css";
 import { secondaryColor } from "../colors";
 
 const Welcome = () => (
-  <div className="d-flex flex-column align-items-center justify-content-center"  >
+  <div className="d-flex flex-column align-items-center justify-content-center">
     <img
       src={reactLogo}
       alt="React Logo"
       className="logo react mb-4"
       style={{ width: 100, height: 100 }}
     />
-    <h3 className="fw-bold text-center mb-3" style={{ fontFamily: "Segoe UI, Arial, sans-serif" }}>
-      Bem vindo(a) ao gerenciador de contas bancárias <span className="text-dark">Decola Tech 2025!</span>
+    <h3
+      className="fw-bold text-center mb-3"
+      style={{ fontFamily: "Segoe UI, Arial, sans-serif" }}
+    >
+      Bem vindo(a) ao gerenciador de contas bancárias{" "}
+      <span className="text-dark">Decola Tech 2025!</span>
     </h3>
     <p className="lead text-secondary mb-4 text-center">
       Clique abaixo para começar:
