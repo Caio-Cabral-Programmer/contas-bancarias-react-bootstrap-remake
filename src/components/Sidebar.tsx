@@ -20,14 +20,14 @@ const Sidebar = () => {
 
   return (
     <aside
-      className={`sidebar d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary shadow`}
+      className={`sidebar d-flex flex-column flex-shrink-0 p-3`}
       style={{
     width: 250,
-    height: "100vh", // Garante altura total da tela
+    height: "100%", // Garante altura total da tela
     marginTop: 0,
     marginBottom: 0,
     borderRadius: 0,
-    transition: "margin-left 0.6s cubic-bezier(.4,2,.3,1)",
+    transition: "margin-left 1s cubic-bezier(.4,2,.3,1)",
     marginLeft: visible ? 0 : -260,
     boxShadow: "2px 0 16px 0 rgba(0,0,0,0.08)",
     background: primaryColor,

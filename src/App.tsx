@@ -1,5 +1,4 @@
 import "./App.css";
-
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import { BrowserRouter, useLocation } from "react-router-dom";
@@ -8,31 +7,35 @@ import Footer from "./components/Footer";
 
 function Layout() {
   const location = useLocation();
-  // Rotas que devem exibir o Sidebar
+  
   const showSidebar = [
     "/home",
-    "/create",
+    "/create", 
     "/read",
     "/update",
     "/delete",
     "/read-all",
   ].some((path) => location.pathname.startsWith(path));
+
   return (
-    <>
+    <div className="d-flex flex-column min-vh-100">
       <Header />
-      <div className="d-flex" style={{ minHeight: "80vh" }}>
+      
+      <div className="d-flex flex-grow-1">
         {showSidebar && <Sidebar />}
-        <main
-          className={
-            showSidebar ? "flex-grow-1 ms-0 ms-md-5" : "container mt-5 w-100"
-          }
-          style={showSidebar ? { marginLeft: 220, padding: 0 } : {}}
+        
+        <main 
+          className={`flex-grow-1 d-flex flex-column ${showSidebar ? "" : "container mt-5"}`}
+          style={showSidebar ? { marginLeft: 0, padding: "1rem" } : {}}
         >
-          <AppRoutes />
+          <div className="flex-grow-1 d-flex flex-column">
+            <AppRoutes />
+          </div>
         </main>
       </div>
+      
       <Footer />
-    </>
+    </div>
   );
 }
 

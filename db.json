@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "id": "359d",
+      "name": "teste",
+      "account": {
+        "number": "123",
+        "agency": "1324",
+        "balance": "100",
+        "limit": "50"
+      },
+      "card": {
+        "number": "111",
+        "limit": "199"
+      }
+    }
+  ]
+}

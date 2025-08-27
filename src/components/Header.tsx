@@ -44,10 +44,10 @@ const Header = () => {
           </div>
           <Link
             to="/home"
-            className="nav-link text-secondary d-flex flex-column align-items-center ms-auto text-white ms-4"
+            className="nav-link text-secondary d-flex flex-column align-items-center ms-auto text-dark ms-4"
           >
             <i
-              className="bi bi-house d-block mx-auto mb-0 text-white"
+              className="bi bi-house d-block mx-auto mb-0 text-dark"
               style={{ fontSize: 24 }}
             ></i>
             Home
