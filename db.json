@@ -13,6 +13,146 @@
         "number": "111",
         "limit": "199"
       }
+    },
+    {
+      "id": "1",
+      "name": "Ana Paula Souza",
+      "account": {
+        "number": "1001",
+        "agency": "0101",
+        "balance": "3500.50",
+        "limit": "1000"
+      },
+      "card": {
+        "number": "5456789012345678",
+        "limit": "2000"
+      }
+    },
+    {
+      "id": "2",
+      "name": "Carlos Eduardo Lima",
+      "account": {
+        "number": "1002",
+        "agency": "0102",
+        "balance": "12000.00",
+        "limit": "5000"
+      },
+      "card": {
+        "number": "5456789012345679",
+        "limit": "7000"
+      }
+    },
+    {
+      "id": "3",
+      "name": "Fernanda Oliveira",
+      "account": {
+        "number": "1003",
+        "agency": "0103",
+        "balance": "800.75",
+        "limit": "500"
+      },
+      "card": {
+        "number": "5456789012345680",
+        "limit": "1200"
+      }
+    },
+    {
+      "id": "4",
+      "name": "João Pedro Martins",
+      "account": {
+        "number": "1004",
+        "agency": "0104",
+        "balance": "250.00",
+        "limit": "300"
+      },
+      "card": {
+        "number": "5456789012345681",
+        "limit": "600"
+      }
+    },
+    {
+      "id": "5",
+      "name": "Mariana Silva",
+      "account": {
+        "number": "1005",
+        "agency": "0105",
+        "balance": "5400.00",
+        "limit": "2000"
+      },
+      "card": {
+        "number": "5456789012345682",
+        "limit": "3500"
+      }
+    },
+    {
+      "id": "6",
+      "name": "Ricardo Gonçalves",
+      "account": {
+        "number": "1006",
+        "agency": "0106",
+        "balance": "150.00",
+        "limit": "200"
+      },
+      "card": {
+        "number": "5456789012345683",
+        "limit": "400"
+      }
+    },
+    {
+      "id": "7",
+      "name": "Patrícia Almeida",
+      "account": {
+        "number": "1007",
+        "agency": "0107",
+        "balance": "9800.00",
+        "limit": "4000"
+      },
+      "card": {
+        "number": "5456789012345684",
+        "limit": "5000"
+      }
+    },
+    {
+      "id": "8",
+      "name": "Lucas Ferreira",
+      "account": {
+        "number": "1008",
+        "agency": "0108",
+        "balance": "320.00",
+        "limit": "250"
+      },
+      "card": {
+        "number": "5456789012345685",
+        "limit": "800"
+      }
+    },
+    {
+      "id": "9",
+      "name": "Juliana Costa",
+      "account": {
+        "number": "1009",
+        "agency": "0109",
+        "balance": "2100.00",
+        "limit": "900"
+      },
+      "card": {
+        "number": "5456789012345686",
+        "limit": "1500"
+      }
+    },
+    {
+      "id": "10",
+      "name": "Gabriel Mendes",
+      "account": {
+        "number": "1010",
+        "agency": "0110",
+        "balance": "500.00",
+        "limit": "350"
+      },
+      "card": {
+        "number": "5456789012345687",
+        "limit": "1000"
+      }
     }
   ]
 }
