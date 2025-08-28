@@ -15,8 +15,7 @@ const Welcome = () => (
       className="fw-bold text-center mb-3"
       style={{ fontFamily: "Segoe UI, Arial, sans-serif" }}
     >
-      Bem vindo(a) ao gerenciador de contas bancárias{" "}
-      <span className="text-dark">Decola Tech 2025!</span>
+      Bem vindo(a) ao gerenciador de contas bancárias Top Bank!{" "}
     </h3>
     <p className="lead text-secondary mb-4 text-center">
       Clique abaixo para começar:
@@ -26,7 +25,7 @@ const Welcome = () => (
       className="btn btn-primary btn-lg px-5 shadow"
       style={{ backgroundColor: secondaryColor, border: "none" }}
     >
-      Ir para Home
+      Iniciar
     </Link>
   </div>
 );

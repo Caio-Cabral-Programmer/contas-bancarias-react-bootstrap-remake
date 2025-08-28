@@ -28,7 +28,7 @@ const Header = () => {
                 className="mb-0 fw-bold"
                 style={{ fontSize: "2rem", fontFamily: "Times New Roman" }}
               >
-                Decola Tech 2025
+                Top Bank
               </h1>
               <p
                 className="mb-0"
@@ -38,7 +38,7 @@ const Header = () => {
                   fontFamily: "Times New Roman",
                 }}
               >
-                Avanade-DIO | Contas Bancárias
+                Projeto em React & .NET
               </p>
             </div>
           </div>

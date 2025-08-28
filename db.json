@@ -1,22 +1,8 @@
 {
   "users": [
     {
-      "id": "359d",
-      "name": "teste",
-      "account": {
-        "number": "123",
-        "agency": "1324",
-        "balance": "100",
-        "limit": "50"
-      },
-      "card": {
-        "number": "111",
-        "limit": "199"
-      }
-    },
-    {
       "id": "1",
-      "name": "Ana Paula Souza",
+      "name": "Maria José",
       "account": {
         "number": "1001",
         "agency": "0101",
@@ -152,6 +138,20 @@
       "card": {
         "number": "5456789012345687",
         "limit": "1000"
+      }
+    },
+    {
+      "id": "00c1",
+      "name": "Teste",
+      "account": {
+        "number": "1651",
+        "agency": "6146",
+        "balance": "5000",
+        "limit": "300"
+      },
+      "card": {
+        "number": "161313161616516",
+        "limit": "400"
       }
     }
   ]

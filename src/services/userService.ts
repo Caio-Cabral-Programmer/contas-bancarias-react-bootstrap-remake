@@ -18,13 +18,16 @@ export async function getAllUsers(): Promise<User[]> {
   return response.json();
 }
 
-export async function getUser(id: number): Promise<User> {
+export async function getUser(id: string | number): Promise<User> {
   const response = await fetch(`${API_URL}/${id}`);
   if (!response.ok) throw new Error("Usuário não encontrado");
   return response.json();
 }
 
-export async function updateUser(id: number, user: User): Promise<User> {
+export async function updateUser(
+  id: string | number,
+  user: User
+): Promise<User> {
   const response = await fetch(`${API_URL}/${id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
@@ -34,7 +37,7 @@ export async function updateUser(id: number, user: User): Promise<User> {
   return response.json();
 }
 
-export async function deleteUser(id: number): Promise<void> {
+export async function deleteUser(id: string | number): Promise<void> {
   const response = await fetch(`${API_URL}/${id}`, { method: "DELETE" });
   if (!response.ok) throw new Error("Erro ao deletar usuário");
 }

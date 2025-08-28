@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import type { User } from "../models/User";
 import { getAllUsers, getUser } from "../services/userService";
 import { secondaryColor } from "../colors";
@@ -14,6 +14,11 @@ const Read: React.FC = () => {
   const [sortType, setSortType] = useState<SortType>("name");
   const [sortOrder, setSortOrder] = useState<SortOrder>("asc");
 
+  // Carregar todos os usuários quando o componente for iniciado
+  useEffect(() => {
+    handleGetAllUsers();
+  }, []);
+
   const handleSearch = async () => {
     setLoading(true);
     setErrorMessage("");
@@ -23,23 +28,14 @@ const Read: React.FC = () => {
         const allUsers = await getAllUsers();
         setUsers(allUsers);
       } else {
-        // Tenta buscar por ID primeiro
-        if (!isNaN(Number(searchTerm))) {
-          try {
-            const user = await getUser(Number(searchTerm));
-            setUsers([user]);
-          } catch {
-            // Se não encontrar por ID, busca por nome
-            const allUsers = await getAllUsers();
-            const filteredUsers = allUsers.filter(user =>
-              user.name.toLowerCase().includes(searchTerm.toLowerCase())
-            );
-            setUsers(filteredUsers);
-          }
-        } else {
-          // Busca por nome
+        // Tenta buscar por ID primeiro (número ou string)
+        try {
+          const user = await getUser(searchTerm);
+          setUsers([user]);
+        } catch {
+          // Se não encontrar por ID, busca por nome
           const allUsers = await getAllUsers();
-          const filteredUsers = allUsers.filter(user =>
+          const filteredUsers = allUsers.filter((user) =>
             user.name.toLowerCase().includes(searchTerm.toLowerCase())
           );
           setUsers(filteredUsers);
@@ -102,8 +98,14 @@ const Read: React.FC = () => {
   };
 
   return (
-    <div className="container-fluid py-4">
-      <div className="shadow rounded-4 bg-white w-100" style={{ border: "1px solid #eee" }}>
+    <div
+      className="d-flex justify-content-center align-items-center"
+      style={{ minHeight: "80vh" }}
+    >
+      <div
+        className="shadow rounded-4 bg-white w-100"
+        style={{ maxWidth: 900, padding: 0, border: "1px solid #eee" }}
+      >
         <div
           style={{
             background: secondaryColor,
@@ -172,24 +174,29 @@ const Read: React.FC = () => {
                   onClick={() => handleSort("name")}
                 >
                   <i className="bi bi-sort-alpha-down me-1"></i>
-                  Nome {sortType === "name" && (sortOrder === "asc" ? "↑" : "↓")}
+                  Nome{" "}
+                  {sortType === "name" && (sortOrder === "asc" ? "↑" : "↓")}
                 </button>
               </div>
               <div className="col-auto">
                 <button
                   type="button"
                   className={`btn btn-sm ${
-                    sortType === "balance" ? "btn-success" : "btn-outline-success"
+                    sortType === "balance"
+                      ? "btn-success"
+                      : "btn-outline-success"
                   }`}
                   onClick={() => handleSort("balance")}
                 >
                   <i className="bi bi-sort-numeric-down me-1"></i>
-                  Saldo {sortType === "balance" && (sortOrder === "asc" ? "↑" : "↓")}
+                  Saldo{" "}
+                  {sortType === "balance" && (sortOrder === "asc" ? "↑" : "↓")}
                 </button>
               </div>
               <div className="col-auto ms-auto">
                 <span className="badge bg-secondary">
-                  {users.length} usuário{users.length !== 1 ? "s" : ""} encontrado{users.length !== 1 ? "s" : ""}
+                  {users.length} usuário{users.length !== 1 ? "s" : ""}{" "}
+                  encontrado{users.length !== 1 ? "s" : ""}
                 </span>
               </div>
             </div>
@@ -225,17 +232,20 @@ const Read: React.FC = () => {
                           <small className="text-muted">ID: {user.id}</small>
                         </div>
                         <div className="col-md-3">
-                          <h6 className="text-success mb-1">Conta</h6>
+                          <h6 className="text-warning mb-1">Conta</h6>
                           <p className="mb-0 small">
-                            <strong>Número:</strong> {user.account.number}<br />
+                            <strong>Número:</strong> {user.account.number}
+                            <br />
                             <strong>Agência:</strong> {user.account.agency}
                           </p>
                         </div>
                         <div className="col-md-3">
-                          <h6 className="text-info mb-1">Cartão</h6>
+                          <h6 className="text-warning mb-1">Cartão</h6>
                           <p className="mb-0 small">
-                            <strong>Número:</strong> {user.card.number}<br />
-                            <strong>Limite:</strong> {formatCurrency(user.card.limit)}
+                            <strong>Número:</strong> {user.card.number}
+                            <br />
+                            <strong>Limite:</strong>{" "}
+                            {formatCurrency(user.card.limit)}
                           </p>
                         </div>
                         <div className="col-md-3 text-end">
@@ -258,10 +268,14 @@ const Read: React.FC = () => {
           {/* Mensagem quando não há usuários */}
           {!loading && users.length === 0 && searchTerm && (
             <div className="text-center py-5">
-              <i className="bi bi-search text-muted" style={{ fontSize: "3rem" }}></i>
+              <i
+                className="bi bi-search text-muted"
+                style={{ fontSize: "3rem" }}
+              ></i>
               <h5 className="mt-3 text-muted">Nenhum usuário encontrado</h5>
               <p className="text-muted">
-                Tente buscar por outro nome ou ID, ou clique em "Todos" para ver todos os usuários.
+                Tente buscar por outro nome ou ID, ou clique em "Todos" para ver
+                todos os usuários.
               </p>
             </div>
           )}
@@ -269,10 +283,14 @@ const Read: React.FC = () => {
           {/* Mensagem inicial */}
           {!loading && users.length === 0 && !searchTerm && (
             <div className="text-center py-5">
-              <i className="bi bi-people text-muted" style={{ fontSize: "3rem" }}></i>
+              <i
+                className="bi bi-people text-muted"
+                style={{ fontSize: "3rem" }}
+              ></i>
               <h5 className="mt-3 text-muted">Busque usuários</h5>
               <p className="text-muted">
-                Digite um nome ou ID para buscar, ou clique em "Todos" para ver todos os usuários.
+                Digite um nome ou ID para buscar, ou clique em "Todos" para ver
+                todos os usuários.
               </p>
             </div>
           )}

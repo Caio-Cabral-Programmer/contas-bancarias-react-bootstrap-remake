@@ -14,7 +14,6 @@ function Layout() {
     "/read",
     "/update",
     "/delete",
-    "/read-all",
   ].some((path) => location.pathname.startsWith(path));
 
   return (

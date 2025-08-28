@@ -7,7 +7,6 @@ const sidebarItems = [
   { label: "Read | GET", to: "/read", icon: "bi-search" },
   { label: "Update | PUT", to: "/update", icon: "bi-pencil-square" },
   { label: "Delete | DELETE", to: "/delete", icon: "bi-trash" },
-  { label: "Read | ALL", to: "/read-all", icon: "bi-list-ul" },
 ];
 
 const Sidebar = () => {

@@ -11,7 +11,7 @@ export type Card = {
 };
 
 export type User = {
-  id?: number;
+  id?: string | number;
   name: string;
   account: Account;
   card: Card;

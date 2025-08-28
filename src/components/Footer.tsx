@@ -80,7 +80,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="container text-center mt-3 small text-secondary">
-        &copy; {new Date().getFullYear()} Projeto pessoal open source. 
+        &copy; {new Date().getFullYear()} Projeto open source inspirado em uma atividade do Decola Tech 2025 (Avanade-DIO). 
       </div>
     </footer>
   );

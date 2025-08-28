@@ -84,7 +84,7 @@ const Create: React.FC = () => {
       setSuccessMessage("Usuário criado com sucesso!");
       setTimeout(() => {
         setSuccessMessage("");
-        navigate("/read-all");
+        navigate("/read");
       }, 2000);
       setForm(initialForm);
       setTouched({});
