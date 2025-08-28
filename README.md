@@ -10,10 +10,15 @@ Aplicação de gerenciamento de contas bancárias desenvolvida em React + TypeSc
 - **Arquitetura modular**: componentes, páginas, models e services separados
 - **Responsivo e com layout profissional**
 
+### Overview
 ![Overview](https://github.com/user-attachments/assets/07dac251-b087-431d-a8b0-cd98cd2d4b90)
+### Create-page
 ![Create-page](https://github.com/user-attachments/assets/8c7f01d5-b3b3-4c3a-95ec-9b35b01fdd9d)
+### Read-page
 ![Read-page](https://github.com/user-attachments/assets/59e36575-ff53-435c-8f77-6d6efb826db9)
+### Update-page
 ![Update-page](https://github.com/user-attachments/assets/4bd0b6f7-9cf8-4756-95bf-00d46aa877f3)
+### Delete-page
 ![Delete-page](https://github.com/user-attachments/assets/a9319c18-cd2a-450e-91c9-f1913d15331b)
 
 ## Estrutura do Projeto
