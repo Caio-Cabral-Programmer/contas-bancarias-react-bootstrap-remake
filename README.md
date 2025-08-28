@@ -1,69 +1,119 @@
-# React + TypeScript + Vite
+# Contas Bancárias React Bootstrap Remake
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Visão Geral
 
-Currently, two official plugins are available:
+Aplicação de gerenciamento de contas bancárias desenvolvida em React + TypeScript, utilizando Vite, Bootstrap 5 e Bootstrap Icons. O projeto segue Clean Architecture, Clean Code e padrões modernos de desenvolvimento frontend.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Frontend SPA** com React 19 + TypeScript
+- **UI moderna** com Bootstrap 5 e Bootstrap Icons
+- **CRUD completo** (Create, Read, Update, Delete) integrado a uma API fake via json-server
+- **Arquitetura modular**: componentes, páginas, models e services separados
+- **Responsivo e com layout profissional**
 
-## Expanding the ESLint configuration
+## Estrutura do Projeto
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+contas-bancarias-react-bootstrap-remake/
+├── public/
+├── src/
+│   ├── assets/           # Imagens e ícones
+│   ├── components/       # Header, Sidebar, Footer
+│   ├── models/           # Tipos TypeScript (User, Account, Card)
+│   ├── pages/            # CRUD: Create, Read, Update, Delete, Welcome, Home
+│   ├── services/         # userService.ts (API REST)
+│   ├── App.tsx           # Layout principal
+│   ├── AppRoutes.tsx     # Rotas centralizadas
+│   ├── colors.ts         # Cores customizadas
+│   └── main.tsx          # Ponto de entrada
+├── db.json               # Banco de dados fake para json-server
+├── package.json
+├── vite.config.ts
+└── README.md
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Instalação e Execução
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. **Instale as dependências:**
+   ```bash
+   npm install
+   ```
+2. **Inicie o json-server (API fake):**
+   ```bash
+   npx json-server --watch db.json --port 3001
+   ```
+3. **Rode o frontend:**
+   ```bash
+   npm run dev
+   ```
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Acesse em: [http://localhost:5173](http://localhost:5173)
+
+## Scripts Úteis
+
+- `npm run dev` — Inicia o frontend em modo desenvolvimento
+- `npm run build` — Gera build de produção
+- `npm run preview` — Preview do build
+- `npm run lint` — Lint do código
+
+## Padrões e Convenções
+
+- **Cores**: Definidas em `src/colors.ts` e usadas via importação JS/TS
+- **Componentes**: Utilizam utilitários Bootstrap (`d-flex`, `px-5`, etc.)
+- **Ícones**: `<i className="bi bi-*"></i>`
+- **Rotas**: Centralizadas em `src/AppRoutes.tsx` usando React Router DOM
+- **Arquitetura**: Clean Architecture, Clean Code, separação clara de responsabilidades
+
+## Exemplos de Código
+
+**Definição de cor primária:**
+
+```ts
+// src/colors.ts
+export const primaryColor = "#ff6200";
 ```
+
+**Uso de rotas:**
+
+```tsx
+// src/AppRoutes.tsx
+<Routes>
+  <Route path="/" element={<Welcome />} />
+  <Route path="/home" element={<Home />} />
+</Routes>
+```
+
+**Uso de ícone:**
+
+```tsx
+<i className="bi bi-house text-white" style={{ fontSize: 24 }}></i>
+```
+
+## Como adicionar novas páginas
+
+1. Crie o componente em `src/pages/`
+2. Registre a rota em `src/AppRoutes.tsx`
+
+## Observações
+
+- Não use variáveis SCSS diretamente no JSX; use variáveis JS/TS
+- Para customizar estilos, prefira sobrescrever CSS global ou variáveis JS/TS
+- Não use `@import` SCSS do Bootstrap; use o CSS pronto
+- Commits devem ser claros e descritivos, em inglês, seguindo o padrão: `feat: ...`, `fix: ...`, etc.
+
+## Autor
+
+Caio Cabral — [GitHub](https://github.com/Caio-Cabral-Programmer)
+
+---
+
+Projeto para fins didáticos e demonstração de boas práticas em React + TypeScript + Bootstrap.
+
+# Crie um README.md completo para este projeto. Inclua:
+
+- Nome do projeto e descrição geral
+- Tecnologias utilizadas
+- Como instalar e rodar localmente
+- Exemplos de uso
+- Estrutura de pastas (se relevante)
+- Licença
+- Parte final para colocação de fotos do projeto
