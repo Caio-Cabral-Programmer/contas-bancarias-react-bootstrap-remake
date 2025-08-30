@@ -4,7 +4,7 @@ import Sidebar from "./Sidebar";
 import AppRoutes from "../AppRoutes";
 import Footer from "./Footer";
 
-function AppContent() {
+function AppContentLayout() {
   const location = useLocation();
   const showSidebar = ["/home", "/create", "/read", "/update", "/delete"].some(
     (path) => location.pathname.startsWith(path)
@@ -30,4 +30,4 @@ function AppContent() {
   );
 }
 
-export default AppContent;
+export default AppContentLayout;

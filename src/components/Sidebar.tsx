@@ -22,7 +22,7 @@ const Sidebar = () => {
       className={`sidebar d-flex flex-column flex-shrink-0 p-3`}
       style={{
     width: 250,
-    height: "100%", // Garante altura total da tela
+    height: "100%",
     marginTop: 0,
     marginBottom: 0,
     borderRadius: 0,
@@ -39,7 +39,7 @@ const Sidebar = () => {
       >
         <span
           className="fs-3 fw-bold px-3 py-0 w-100 text-center text-dark"
-          style={{ letterSpacing: 2, borderRadius: 4, display: "block" }}
+          style={{ letterSpacing: 3, display: "block" }}
         >
           CRUD
         </span>
@@ -60,11 +60,7 @@ const Sidebar = () => {
                   background:
                     location.pathname === item.to
                       ? secondaryColor
-                      : "transparent",
-                  color: location.pathname === item.to ? "#fff" : "#23272b",
-                  border: "none",
-                  fontSize: 16,
-                  transition: "background 0.2s, color 0.2s",
+                      : "transparent"
                 }}
               >
                 <i

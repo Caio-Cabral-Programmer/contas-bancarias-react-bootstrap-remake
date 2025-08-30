@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const devPhoto = "/src/assets/dev-photo.png"; // Substitua pelo caminho real da foto do dev
+const devPhoto = "/src/assets/dev-photo.png"; 
 const companyEmail = "caiocabral.ep@gmail.com";
 
 const Footer = () => {
@@ -50,7 +50,7 @@ const Footer = () => {
           </a>
           <button
             onClick={handleCopyEmail}
-            className="btn btn-link text-white p-0 ms-2"
+            className="btn btn-link text-white p-0 ms-0"
             title="Copiar e-mail"
             style={{ fontSize: 28 }}
           >
@@ -58,7 +58,7 @@ const Footer = () => {
             <span className="visually-hidden">Copiar e-mail</span>
           </button>
           {copied && (
-            <span className="ms-2 small text-success">E-mail copiado!</span>
+            <span className="ms-2 small text-white bg-success p-2 rounded">E-mail copiado!</span>
           )}
         </div>
 

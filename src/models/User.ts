@@ -1,3 +1,10 @@
+export type User = {
+  id?: string | number;
+  name: string;
+  account: Account;
+  card: Card;
+};
+
 export type Account = {
   number: string;
   agency: string;
@@ -10,9 +17,4 @@ export type Card = {
   limit: string;
 };
 
-export type User = {
-  id?: string | number;
-  name: string;
-  account: Account;
-  card: Card;
-};
+
