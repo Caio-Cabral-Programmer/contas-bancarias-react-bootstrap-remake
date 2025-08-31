@@ -19,6 +19,7 @@ const Read: React.FC = () => {
     handleGetAllUsers();
   }, []);
 
+  // TODO: Melhorar a performance desta busca, porque estão acontecendo muitas requisições desnecessárias.
   const handleSearch = async () => {
     setLoading(true);
     setErrorMessage("");
@@ -71,6 +72,7 @@ const Read: React.FC = () => {
     }
   };
 
+  // TODO: Se a lógica da busca for alterada para melhorar a performance, esta função não pode mais fazer um setUsers, ela precisa trabalhar com outra variável.
   const handleSort = (type: SortType) => {
     const newOrder = sortType === type && sortOrder === "asc" ? "desc" : "asc";
     setSortType(type);
